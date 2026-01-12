@@ -1552,7 +1552,7 @@ class NixlConnectorWorker:
                 assert block_len == remote_block_len, (
                     "All remote layers must have the same block size"
                 )
-            print(f"DEBUG: remote_block_len={remote_block_len}, local_block_len={self.block_len_per_layer[0]}, tp_ratio={tp_ratio}, block_size_ratio={block_size_ratio}, expected={(self.block_len_per_layer[0] * tp_ratio) // block_size_ratio}", file=sys.stderr, flush=True)
+            logger.debug(f"DEBUG: remote_block_len={remote_block_len}, local_block_len={self.block_len_per_layer[0]}, tp_ratio={tp_ratio}, block_size_ratio={block_size_ratio}, expected={(self.block_len_per_layer[0] * tp_ratio) // block_size_ratio}")
 
             assert (
                 remote_block_len
